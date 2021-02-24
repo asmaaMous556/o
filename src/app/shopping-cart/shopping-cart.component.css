@@ -1,0 +1,17 @@
+.thumbnail{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-size: cover;
+}
+
+.table{
+    padding-top: 40px;
+    padding-left: 100px;
+}
+ .btn-light{
+    margin-bottom: 20px;
+}
+.btn-primary{
+    margin-bottom: 50px;
+}

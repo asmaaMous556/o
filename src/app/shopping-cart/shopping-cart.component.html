@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-9">
+        <h1>Shopping cart</h1>
+        <button class=" btn btn-light" (click)="clearCart()"> clear shopping cart</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>
+                        <img [src]="item.imageUrl" class="thumbnail" >
+                    </td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.price | currency :'USD': true}}</td>
+                    <!-- <td>{{item.quantity}}</td> -->
+                     <td><app-product-quantity [product]="item"></app-product-quantity></td> 
+                     <td>{{item.quantity*item.price | currency :'USD': true}}</td>
+                </tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>{{ getTotalPrice() | currency :'USD': true}}</th>
+              
+            </tbody>
+        </table>
+        <a routerLink="/check-out" class=" btn btn-primary">check out</a>
+    </div>
+</div>
